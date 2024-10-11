@@ -89,6 +89,7 @@ body {
     padding: 13px 12px;
     position: sticky;
     bottom: 17px;
+    transition: border 0.3s;
 }
 
 .sidebar-feedback a {
@@ -138,7 +139,7 @@ body {
     margin-right: 40px;
 }
 
-.header-menu-left .menu-image  {
+.header-menu-left .menu-image {
     margin-right: 20px;
 }
 
@@ -149,13 +150,11 @@ body {
 }
 
 .header-menu-left a:hover,
-.header-menu-left a:hover path {
+.header-menu-left a:hover path,
+.header-menu-left-dropdown:hover > a,
+.header-menu-left-dropdown:hover path {
     color: #3D63D2;
     fill: #3D63D2;
-}
-
-.header-menu-left-dropdown:hover .header-menu-left-dropdown-list-wrapper {
-    display: block;
 }
 
 .header-menu-left-dropdown {
@@ -167,6 +166,10 @@ body {
     position: absolute;
     top: 10px;
     width: 150px;
+}
+
+.header-menu-left-dropdown:hover .header-menu-left-dropdown-list-wrapper {
+    display: block;
 }
 
 .header-menu-left-dropdown-list {
@@ -192,7 +195,6 @@ body {
     align-items: center;
 }
 
-
 .header-menu-right-search-block {
     display: flex;
     align-items: center;
@@ -202,6 +204,7 @@ body {
     padding: 10px 10px 10px 20px;
     box-sizing: border-box;
 }
+
 .header-menu-right-item {
     padding: 0 20px;
 }
@@ -273,7 +276,7 @@ body {
 }
 
 .video-item:hover {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .video-item-image {
@@ -305,6 +308,7 @@ body {
 .video-item-status.published {
     background: #C6E0C3;
     color: #027900;
+    opacity: 1;
 }
 
 .video-item-status.error {
@@ -350,13 +354,41 @@ body {
     fill: #3D63D2;
 }
 
+.technical-support a {
+    text-decoration: none;
+}
+
 .technical-support {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 327px;
-    transform: rotate(-90deg);
-    width: 186px;
-    height: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
     background: #467DF2;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 0 0 10px;
+    width: 39px;
+    height: 186px;
+    transition: padding-right 0.2s;
 }
+
+.technical-support-image {
+    padding-bottom: 20px;
+    font-size: 0;
+}
+
+.technical-support-text {
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    padding-left: 120px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.technical-support-href:hover .technical-support {
+    background-color: #2F54A3;
+    padding-right: 10px;
+}
+
