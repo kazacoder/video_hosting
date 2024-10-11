@@ -271,8 +271,9 @@ body {
     margin: 20px;
     box-sizing: border-box;
     background: #FFFFFF;
-    box-shadow: 0px 4px 20px rgba(102, 102, 102, 0.15);
+    box-shadow: 0 4px 20px rgba(102, 102, 102, 0.15);
     border-radius: 10px;
+    transition: box-shadow 0.3s;
 }
 
 .video-item:hover {
@@ -354,13 +355,48 @@ body {
     fill: #3D63D2;
 }
 
-.technical-support a {
-    text-decoration: none;
-}
+/*.technical-support a {*/
+/*    text-decoration: none;*/
+/*    display: block;*/
+/*}*/
 
-.technical-support {
+/*.technical-support {*/
+/*    position: fixed;*/
+/*    right: 0;*/
+/*    top: 327px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: end;*/
+/*    align-items: center;*/
+/*    background: #467DF2;*/
+/*    border-radius: 10px 0 0 10px;*/
+/*    width: 39px;*/
+/*    height: 186px;*/
+/*    transition: padding-right 0.2s;*/
+/*}*/
+
+/*.technical-support-image {*/
+/*    padding-bottom: 20px;*/
+/*    font-size: 0;*/
+/*}*/
+
+/*.technical-support-text {*/
+/*    transform: rotate(-90deg);*/
+/*    white-space: nowrap;*/
+/*    padding-left: 120px;*/
+/*    font-size: 14px;*/
+/*    font-weight: bold;*/
+/*    color: white;*/
+/*}*/
+
+/*.technical-support-href:hover .technical-support {*/
+/*    background-color: #2F54A3;*/
+/*    padding-right: 10px;*/
+/*}*/
+
+.button-technical-support {
     position: fixed;
-    right: 0;
+    right: -10px;
     top: 327px;
     display: flex;
     flex-direction: column;
@@ -368,17 +404,16 @@ body {
     align-items: center;
     background: #467DF2;
     border-radius: 10px 0 0 10px;
-    width: 39px;
+    width: 49px;
     height: 186px;
-    transition: padding-right 0.2s;
+    border: none;
+    transition: right 0.2s;
+    cursor: pointer;
+    padding-bottom: 15px;
+    padding-right: 10px;
 }
 
-.technical-support-image {
-    padding-bottom: 20px;
-    font-size: 0;
-}
-
-.technical-support-text {
+.button-technical-support .rotated-text {
     transform: rotate(-90deg);
     white-space: nowrap;
     padding-left: 120px;
@@ -387,8 +422,7 @@ body {
     color: white;
 }
 
-.technical-support-href:hover .technical-support {
+.button-technical-support:hover {
+    right: 0;
     background-color: #2F54A3;
-    padding-right: 10px;
 }
-
